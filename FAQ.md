@@ -44,9 +44,9 @@
 class Summator
 {
 public:
-    long long Sum(int lhs, int rhs)
+    int64_t Sum(int lhs, int rhs)
     {
-        return (long long) lhs + rhs;
+        return static_cast<int64_t>(lhs) + rhs;
     }
 
 };
@@ -54,22 +54,22 @@ public:
 void DefaultWorkTest()
 {
     Summator summator;
-    long long result = summator.Sum(1, 5);
+    int64_t result = summator.Sum(1, 5);
     assert(result == 6);
 }
 
 void IntLimitTest()
 {
     Summator summator;
-    long long max_int = std::numeric_limits<int>::max();
-    long long result = summator.Sum(max_int, max_int);
+    int max_int = std::numeric_limits<int>::max();
+    int64_t result = summator.Sum(max_int, max_int);
     assert(result == 4'294'967'294);
 }
 
 void NegativeTest()
 {
     Summator summator;
-    long long result = summator.Sum(-1, 10);
+    int64_t result = summator.Sum(-1, 10);
     assert(result == 9);
 }
 
