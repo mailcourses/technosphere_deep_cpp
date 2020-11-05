@@ -39,7 +39,7 @@ String::String(const String &other) : size_(other.size_), value(other.value)
 {
     std::cout << "Copy constructor" << std::endl;
     data_ = new char[size_];
-    std::copy(data_, data_ + size_, other.data_);
+    std::copy(other.data_, other.data_ + size_, data_);
 }
 
 String::String(String&& other) : size_(std::move(other.size_)), value(std::move(other.value))
@@ -64,7 +64,7 @@ String::operator=(const String& copied)
     delete[] data_;
     data_ = tmp;
     value = copied.value;
-    std::copy(data_, data_ + size_, copied.data_);
+    std::copy(copied.data_, copied.data_ + size_, data_);
 }
 
 String&
