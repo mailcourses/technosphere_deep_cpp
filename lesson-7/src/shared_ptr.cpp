@@ -27,7 +27,7 @@ public:
     }
     my_shared_ptr& operator=(const my_shared_ptr& rhs)
     {
-        if (this == &rhs)
+        if (this->data == rhs.data)
         {
             return *this;
         }
@@ -35,7 +35,7 @@ public:
         release();
         data = rhs.data;
         ++data->counter_;
-
+        return *this;
     }
     ~my_shared_ptr()
     {
