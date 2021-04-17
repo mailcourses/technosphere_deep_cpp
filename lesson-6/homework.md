@@ -78,7 +78,8 @@ public:
     {
         return process(args...);
     }
-    
+    Error process(bool &&arg);
+    Error process(uint64_t &&arg);
 private:
     // process использует variadic templates
 };
