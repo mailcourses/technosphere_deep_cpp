@@ -1,5 +1,5 @@
-CC=g++
-FLAGS=-std=c++17 -Wall -pedantic
+CC=g++-11
+FLAGS=-std=c++20 -Wall -pedantic -Wextra -Werror
 
 all: smart_ptr mem
 
