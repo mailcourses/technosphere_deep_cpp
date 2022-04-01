@@ -27,5 +27,15 @@ public:
 
     // Тут другие методы для установки callback-функций.
     //...
+    void Parse(const std::string &);
 };
+
+int main()
+{
+    TokenParser parser;
+    std::string line;
+    while (std::getline(line)) {
+        parser.Parse(line);
+    }
+}
 ```
