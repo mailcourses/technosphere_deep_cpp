@@ -1,4 +1,4 @@
-CC=g++-11
+CC=g++
 FLAGS=-std=c++20 -Wall -pedantic -Wextra -Werror
 TEST_LIBS=-lgtest_main -lgtest -lpthread
 
